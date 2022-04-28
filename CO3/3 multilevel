@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+class Person{
+	int age;
+	String name,gender,address;
+	Person(String a,int b,String c,String d){	
+		this.name=a;
+		this.age=b;
+		this.gender=c;
+		this.address=d;
+	}
+}
+
+class Employeee extends Person{
+	int empid,salary;
+	String comp_name,qualification;
+	Employee(String a,int b,String c,String d,int eid,String cname,String quali,int sal){
+			super(String a,int b,String c,String d);
+					
+			
+	}
+}
+
+class Teacher extends Employeee{
+	String dept,sub;
+	int t_id;
+	Teacher(String a,int b,String c,String d,int eid,String cname,String quali,int sal,int tid,String dep,String subj){
+		super(a,b,c,d,eid,cname,String quali,int sal);
+	}
+	void display(){
+			System.out.println(name);
+	}
+	
+}
+public class mulilevel {
+
+	public static void main(String[] args) {
+		Teacher obj=new Teacher("qq",1,"qqq","fjka",45,"sjdhasg","wer",455,214,"fsh","afh");
+		
+
+	}
+
+}
