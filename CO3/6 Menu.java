@@ -10,7 +10,6 @@ public class Menu {
 		Circle obj1= new Circle();
 		
 		Rectangle obj2=new Rectangle();
-		I=obj2;
 		do{
 			System.out.println("1-Area of Circle\n2-Perimeter of Circle\n3-Area of Rectangle\n4-Perimeter of Rectangle\n0-Exit\nEnter the choice");
 			ch=s.nextInt();
