@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+
+public class Menu {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int ch;
+		Inter I;
+		Circle obj1= new Circle();
+		I=obj1;
+		Rectangle obj2=new Rectangle();
+		I=obj2;
+		do{
+			System.out.println("1-Circle\n2-Rectangle\n0-Exit\nEnter the choice");
+			ch=s.nextInt();
+			switch(ch){
+			case 1:obj1.area();
+				break;
+			case 2:obj2.area();
+				break;
+			default:System.out.println("Invalid");
+			}
+		}while(ch!=0);
+		
+
+	}
+
+}
+
+interface Inter{
+	void area();
+
+}
+
+class Circle implements Inter{
+	public void area(){
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the radius");
+		int r=s.nextInt();
+		System.out.println("Area of Circle= "+(3.14*r*r));
+		
+	}
+	
+}
+
+class Rectangle implements Inter{
+	public void area(){
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the l and b");
+		int l=s.nextInt();
+		int b=s.nextInt();
+		System.out.println("Area of Rectangle= "+(l*b));
+		
+		
+	}
+	
+}
