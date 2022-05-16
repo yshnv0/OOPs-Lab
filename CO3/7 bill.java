@@ -1,12 +1,13 @@
 import java.util.Scanner;
-
+import java.util.Date;
 
 
 public class bill implements outline{
-	int id,quantity,unit,total;
+	int id,quantity,unit,total,orderid;
 	String  name;
+	Date d;
 	
-	bill(){
+	public void addItem(){
 		System.out.println("\nEnter the item id");
 		id=s.nextInt();
 		s.nextLine();
@@ -20,6 +21,19 @@ public class bill implements outline{
 		total=unit*quantity;
 		
 	}
+	public void forHeader(){
+		d=new Date();
+		System.out.println("Enter the Order ID");
+		orderid=s.nextInt();
+		s.nextLine();
+		
+	}
+	public void showHeader(){
+		
+		System.out.println("\nOrder ID : "+orderid);
+		System.out.println("\nDate :"+d.toString());
+	}
+	
 	public void prepareBill(){
 		
 		System.out.format("%10d %10s %10d %10d %10d",id,name,quantity,unit,total);
@@ -32,10 +46,15 @@ public class bill implements outline{
 		while(ch==1 && i<n ){
 			System.out.println("Ttem "+(i+1));
 			newbill[i]=new bill();
+			if(i==0){	
+				newbill[i].forHeader();
+			}
+			newbill[i].addItem();
 			i++;
 			System.out.println("Enter 1 to add more items");
 			ch=s.nextInt();
 		}
+		newbill[0].showHeader();
 		System.out.printf("%10s %10s %10s %10s %10s","PRODUCT ID", "NAME", "QUANTITY", "UNIT PRIZE", "TOTAL");
 		System.out.println();
 		for(int z=0;z<55;z++){
@@ -60,6 +79,11 @@ public class bill implements outline{
 
 interface outline{
 	Scanner s=new Scanner(System.in);
-	void prepareBill();
+	public void prepareBill();
+	void addItem();
+	void forHeader();
+	void showHeader();
+	
+	
 	
 }
